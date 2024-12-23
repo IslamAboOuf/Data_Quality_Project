@@ -418,10 +418,17 @@ def main():
             convert_data_type()
         elif options =="Chat With AI":
             chat_with_rag()
-        elif options == "Download Data":
+        elif options == "Download     Data":
             download_data()
+
     else:
         st.warning("Please upload a file first.")
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
