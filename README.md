@@ -20,12 +20,16 @@ interface to interact with the dataset and answer questions using a **Retrieval-
 - Built with **Streamlit**, providing an intuitive and interactive web UI.
 
 
-## Usage
-- **Upload Dataset:** Upload your CSV dataset through the interface.
-- **Perform Data Quality Checks:**
-    -Handle missing values and duplicates.
-    -Detect and manage outliers.
-- **Interact with Chatbot:** Use the chatbot to ask questions about your dataset or get recommendations.
+- Upload your dataset (CSV or Excel) via the sidebar.
+- Select the task you want to perform from the navigation menu in the sidebar:
+  - **Dataset Info**: View basic information about your dataset (columns, types, non-null counts).
+  - **Describe Dataset**: View the descriptive statistics of the dataset.
+  - **Handle Missing Values**: Choose to fill or drop missing values from columns.
+  - **Handle Duplicates**: Identify and remove duplicate rows.
+  - **Handle Outliers**: Remove outliers using the IQR method.
+  - **Chat using RAG**: Interact with your dataset via a chatbot powered by Ollama.
+
+After performing any changes, you can download the modified dataset.
 
 ## Demo Video
 For a detailed walkthrough of the project, watch the [demo video here](https://youtu.be/SFPLEq2ZPHo).
