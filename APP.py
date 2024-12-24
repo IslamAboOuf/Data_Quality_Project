@@ -213,27 +213,6 @@ def handle_outliers():
 
             st.session_state.df = df_session
 
-# Convert Data Type
-def convert_data_type():
-    st.subheader("Convert Data Type")
-    df = st.session_state.df
-    column = st.selectbox("Select Column", df.columns)
-    data_types = ["int64", "float64", "object", "bool"]
-
-    new_type = st.selectbox("Select New Data Type", data_types)
-
-    if st.button(f"Convert {column} to {new_type}"):
-        try:
-            df[column] = df[column].astype(new_type)
-            st.success(f"Column '{column}' has been converted to {new_type}!")
-            st.session_state.df = df
-
-            # Display Data Info after conversion
-            st.subheader("Updated Data Information")
-            display_data_info()
-
-        except Exception as e:
-            st.error(f"Error: {e}")
 
 # Visualization
 def Show_Visualization():
@@ -394,7 +373,7 @@ def main():
     st.sidebar.title("Operations ")
     options = st.sidebar.radio(" ", [
         "Upload File", "Data Info", "Handle Missing Values", "Rename Columns",
-        "Handle Outliers","Handle Duplicates", "Heatmap", "Visualization", "Convert Data Type","Chat With AI", "Download Data"
+        "Handle Outliers","Handle Duplicates", "Heatmap", "Visualization","Chat With AI", "Download Data"
     ])
 
     if options == "Upload File":
@@ -414,11 +393,9 @@ def main():
             show_heatmap()
         elif options == "Visualization":
             Show_Visualization()
-        elif options == "Convert Data Type":
-            convert_data_type()
         elif options =="Chat With AI":
             chat_with_rag()
-        elif options == "Download     Data":
+        elif options == "Download Data":
             download_data()
 
     else:
