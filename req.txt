@@ -1,9 +1,0 @@
-streamlit
-pandas
-numpy
-matplotlib
-seaborn
-ollama
-missingno
-scikit-learn
-imbalanced-learn
